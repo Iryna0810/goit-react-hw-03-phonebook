@@ -25,20 +25,14 @@ export class App extends Component {
         ? this.setState({ contacts: parseContacts })
         : this.setState({ contacts: contacts })
     
-    if (parseContacts.length === 0) {
-  this.setState({ contacts: contacts })
-    };
-
-
-    // this.setState({ contacts: parseContacts });
+  //   if (parseContacts.length === 0) {
+  // this.setState({ contacts: contacts })
+  //   };
   }
 
       componentDidUpdate(prevProps, prevState) {
-        console.log('App componentDidUpdate');
         if (this.state.contacts !== prevState.contacts) {
-          console.log('Update contacts');
           localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
-
         }
     }
 
